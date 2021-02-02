@@ -13,6 +13,10 @@ class Turn {
     return this.currentCard;
   };
 
+  evaluateCard() {
+    return this.guess === this.currentCard.correctAnswer; 
+  }
+
 };
 
 
