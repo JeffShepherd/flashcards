@@ -14,15 +14,16 @@ class Round {
   }
 
   takeTurn(guess) {
-    this.turns++
-    
+   
     let turn = new Turn(guess, this.returnCurrentCard())
+
+    this.turns++//needed to be after ^ or we skip the first card
 
     if (!turn.evaluateCard()) {
       this.incorrectGuesses.push(this.currentCard.id)
     }
 
-    // return turn.giveFeedback()
+    return turn.giveFeedback()
   }
 }
 

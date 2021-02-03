@@ -51,6 +51,19 @@ describe('Round', function() {
       expect(round.incorrectGuesses[0]).to.equal(12);
     });
 
+    it('should give feedback revelant to the accuracy of the guess', function() {
+      const card1 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
+      const deck = new Deck([card1]);
+      const round = new Round(deck);
+  
+      expect(round.takeTurn('William')).to.equal('incorrect!');
+      expect(round.takeTurn('Fitzgerald')).to.equal('correct!');
+    });
+
+    // how to make next card become current card? (use current turn value as index value in returnCurrentCard??)
+    // it('should ')
+
+
   });
 
 
