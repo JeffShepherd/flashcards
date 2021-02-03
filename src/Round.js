@@ -21,9 +21,16 @@ class Round {
     }
     return turn.giveFeedback()
   }
+
   calculatePercentCorrect() {
-    return ((this.turns - this.incorrectGuesses.length) / this.turns) * 100;
+    const percent = ((this.turns - this.incorrectGuesses.length) / this.turns) * 100;
+    return Math.floor(percent);
   }
+
+  endRound() {
+    console.log(`** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`);
+  }
+
 };
 
 module.exports = Round;

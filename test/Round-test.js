@@ -88,10 +88,8 @@ describe('Round', function() {
     round.takeTurn('sea otter');
     expect(round.calculatePercentCorrect()).to.equal(100);
     round.takeTurn('appendix');
-    expect(round.calculatePercentCorrect()).to.equal(50);
+    round.takeTurn('Fitzgerald');
+    expect(round.calculatePercentCorrect()).to.equal(66);
   });
-
-
-
 
 });
