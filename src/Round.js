@@ -9,7 +9,7 @@ class Round {
   }
 
   returnCurrentCard() {
-    this.currentCard = this.deck.cards[0];
+    this.currentCard = this.deck.cards[this.turns];
     return this.currentCard;
   }
 

@@ -52,21 +52,44 @@ describe('Round', function() {
     });
 
     it('should give feedback revelant to the accuracy of the guess', function() {
-      const card1 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
-      const deck = new Deck([card1]);
+      const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+      const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
+      const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
+      const deck = new Deck([card1, card2, card3]);
       const round = new Round(deck);
   
-      expect(round.takeTurn('William')).to.equal('incorrect!');
-      expect(round.takeTurn('Fitzgerald')).to.equal('correct!');
+      expect(round.takeTurn('pug')).to.equal('incorrect!');
+      expect(round.takeTurn('gallbladder')).to.equal('correct!');
     });
 
-    // how to make next card become current card? (use current turn value as index value in returnCurrentCard??)
-    // it('should ')
+    it('should make the next card the current card', function() {
+      const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+      const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
+      const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
+      const deck = new Deck([card1, card2, card3]);
+      const round = new Round(deck);
+  
+      round.takeTurn('pug')
+      expect(round.currentCard).to.equal(card1);
+      round.takeTurn('gallbladder')
+      expect(round.currentCard).to.equal(card2);
+    });
 
 
   });
 
+  // it('should make the next card the current card', function() {
+  //   const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+  //   const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
+  //   const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
+  //   const deck = new Deck([card1, card2, card3]);
+  //   const round = new Round(deck);
 
+  //   round.takeTurn('pug')
+  //   expect(round.currentCard).to.equal(card1);
+  //   round.takeTurn('gallbladder')
+  //   expect(round.currentCard).to.equal(card2);
+  // });
 
 
 
