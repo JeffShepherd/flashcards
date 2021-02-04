@@ -15,7 +15,7 @@ class Round {
 
   takeTurn(guess) {
     let turn = new Turn(guess, this.returnCurrentCard())
-    this.turns++//needed to be after ^ or we skip the first card
+    this.turns++
     if (!turn.evaluateCard()) {
       this.incorrectGuesses.push(this.currentCard.id)
     }

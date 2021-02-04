@@ -11,19 +11,26 @@ class Game {
   }
 
   start() {
-    const cards = [];
+    this.createCurrentRound(this.createCards());
+    this.printMessage(this.currentRound.deck);
+    this.printQuestion(this.currentRound);
+  }
+  
+  createCurrentRound(cards) {
+    const deck = new Deck(cards);
+    this.currentRound = new Round(deck);
+  }
 
+  createCards() {
+    const cards = [];
     prototypeQuestions.forEach(dataObject => {
       cards.push(new Card(dataObject.id, dataObject.question, dataObject.answers, dataObject.correctAnswer));
     });
-
-    const deck = new Deck(cards);
-    this.currentRound = new Round(deck);
-    this.printMessage(deck, this.currentRound);
-    this.printQuestion(this.currentRound);
+    return cards;
   }
 
-  printMessage(deck, round) {
+
+  printMessage(deck) {
       console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
 -----------------------------------------------------------------------`)
   }
