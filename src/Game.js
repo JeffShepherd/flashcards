@@ -8,7 +8,6 @@ const Round = require('./Round');
 class Game {
   constructor() {
     this.currentRound;
-
   }
 
   start() {
