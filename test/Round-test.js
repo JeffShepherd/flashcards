@@ -1,6 +1,6 @@
 const chai = require('chai');
-const Card = require('../src/Card');//required?
-const Deck = require('../src/Deck');//required?
+const Card = require('../src/Card');
+const Deck = require('../src/Deck');
 const Round = require('../src/Round');
 const expect = chai.expect;
 
@@ -55,9 +55,9 @@ describe('Round', () => {
     });
 
     it('should make the next card the current card', () => {
-      round.takeTurn('pug')
+      round.takeTurn('pug');
       expect(round.currentCard).to.equal(card1);
-      round.takeTurn('gallbladder')
+      round.takeTurn('gallbladder');
       expect(round.currentCard).to.equal(card2);
     });
 
@@ -70,5 +70,4 @@ describe('Round', () => {
     round.takeTurn('Fitzgerald');
     expect(round.calculatePercentCorrect()).to.equal(66);
   });
-
 });
