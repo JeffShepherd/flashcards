@@ -13,9 +13,10 @@ class Game {
   start() {
     const cards = [];
 
-    prototypeQuestions.map(dataObject => {
+    prototypeQuestions.forEach(dataObject => {
       cards.push(new Card(dataObject.id, dataObject.question, dataObject.answers, dataObject.correctAnswer));
     });
+
     const deck = new Deck(cards);
     const round = new Round(deck);
     this.printMessage(deck, round);
