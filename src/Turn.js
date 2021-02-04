@@ -21,11 +21,10 @@ class Turn {
     if (this.evaluateCard()) {
       return 'correct!';
     } else {
-      return 'incorrect!'
+      return 'incorrect!';
     }
   }
 
 }
-
 
 module.exports = Turn;

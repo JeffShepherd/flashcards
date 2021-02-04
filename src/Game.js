@@ -29,7 +29,6 @@ class Game {
     return cards;
   }
 
-
   printMessage(deck) {
       console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
 -----------------------------------------------------------------------`)
