@@ -15,9 +15,9 @@ class Round {
 
   takeTurn(guess) {
     let turn = new Turn(guess, this.returnCurrentCard())
-    this.turns++
+    this.turns++;
     if (!turn.evaluateCard()) {
-      this.incorrectGuesses.push(this.currentCard.id)
+      this.incorrectGuesses.push(this.currentCard.id);
     }
     return turn.giveFeedback()
   }
@@ -31,6 +31,6 @@ class Round {
     console.log(`** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`);
   }
 
-}
+};
 
 module.exports = Round;
