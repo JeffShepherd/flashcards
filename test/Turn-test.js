@@ -5,6 +5,12 @@ const expect = chai.expect;
 
 describe('Turn', function() {
 
+  let card;
+
+  beforeEach(function() {
+    card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
+  })
+
   it('should be a function', function() {
     const turn = new Turn();
     expect(Turn).to.be.a('function');
@@ -21,7 +27,6 @@ describe('Turn', function() {
   });  
 
   it('should store the current card in play', function() {
-    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const turn = new Turn('object literal', card);
 
     expect(turn.currentCard).to.be.an.instanceof(Card);
@@ -29,14 +34,12 @@ describe('Turn', function() {
   });  
 
   it('should return the guess', function() {
-    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const turn = new Turn('object literal', card);
 
     expect(turn.returnGuess()).to.equal('object literal');
   });
 
   it('should return the current card', function() {
-    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const turn = new Turn('string literal', card);
 
     expect(turn.returnCard()).to.be.an.instanceof(Card);
@@ -44,7 +47,6 @@ describe('Turn', function() {
   });
 
   it('should evalauate guess vs correct answer and return boolean value', function() {
-    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const turn1 = new Turn('object', card);
     const turn2 = new Turn('string literal', card);
 
@@ -53,7 +55,6 @@ describe('Turn', function() {
   });
 
   it('should return incorrect or correct based on accuracy of guess', function() {
-    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const turn1 = new Turn('object', card);
     const turn2 = new Turn('string literal', card);
 
