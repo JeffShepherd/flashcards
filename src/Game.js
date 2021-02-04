@@ -18,9 +18,9 @@ class Game {
     });
 
     const deck = new Deck(cards);
-    const round = new Round(deck);
-    this.printMessage(deck, round);
-    this.printQuestion(round);
+    this.currentRound = new Round(deck);
+    this.printMessage(deck, this.currentRound);
+    this.printQuestion(this.currentRound);
   }
 
   printMessage(deck, round) {
