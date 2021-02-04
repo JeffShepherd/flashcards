@@ -8,7 +8,7 @@ const Round = require('./Round');
 class Game {
   constructor() {
     this.currentRound;
-  };
+  }
 
   start() {
     this.createCurrentRound(this.createCards());
@@ -37,6 +37,6 @@ class Game {
   printQuestion(round) {
       util.main(round);
   }
-};
+}
 
 module.exports = Game;

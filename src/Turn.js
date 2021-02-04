@@ -3,7 +3,7 @@ class Turn {
   constructor(guess, currentCard) {
     this.guess = guess;
     this.currentCard = currentCard;
-  };
+  }
   
   returnGuess() {
     return this.guess;
@@ -25,6 +25,6 @@ class Turn {
     }
   }
 
-};
+}
 
 module.exports = Turn;
