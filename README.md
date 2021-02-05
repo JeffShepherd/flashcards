@@ -1,6 +1,6 @@
-# **Flashcards**
+# **Flash Cards**
 
-Flashcards is a Mod2 project in the [Turing School of Software and Design](https://turing.io/). This program (ran in the CLI) simulates a set of flash cards. A user will be able to see the questions, take guesses, and see a final score at the end of the round.
+Flash Cards is a Mod2 project in the [Turing School of Software and Design](https://turing.io/). This program (ran in the CLI) simulates a set of flash cards. A user will be able to see the questions, take guesses, and see a final score at the end of the round.
 
 [Original Project Specifications and Game Rules](https://frontend.turing.io/projects/flash-cards.html)
 
